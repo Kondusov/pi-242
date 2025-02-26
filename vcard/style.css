@@ -53,3 +53,9 @@ body{
 .block_text{
     margin: 45px 0;
 }
+.block_stack div{
+    transition: 0.5s;
+}
+.block_stack div:hover{
+    transform: rotate(-5deg) translate(-16px, -25px);
+}
