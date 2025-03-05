@@ -23,16 +23,20 @@ bodyMargin();
 // событие нажатия на триггер открытия модального окна
 document.getElementById("html").addEventListener(
     "mouseleave", function () {
-    // делаем модальное окно видимым
-    modalBackground.style.display = "block";
+        //console.log(event.pageX + ' : ' + event.pageY)
+        if(event.pageY < 0){
+            
+        // делаем модальное окно видимым
+        modalBackground.style.display = "block";
 
-    // если размер экрана больше 1366 пикселей (т.е. на мониторе может появиться ползунок)
-    if (windowInnerWidth >= 1366) {
-        bodyMargin();
+        // если размер экрана больше 1366 пикселей (т.е. на мониторе может появиться ползунок)
+        if (windowInnerWidth >= 1366) {
+            bodyMargin();
+        }
+
+        // позиционируем наше окно по середине, где 175 - половина ширины модального окна
+        modalActive.style.left = "calc(20%)";
     }
-
-    // позиционируем наше окно по середине, где 175 - половина ширины модального окна
-    modalActive.style.left = "calc(20%)";
 });
 // нажатие на крестик закрытия модального окна
 modalClose.addEventListener("click", function () {
@@ -50,4 +54,10 @@ modalBackground.addEventListener("click", function (event) {
             bodyMargin();
         }
     }
+});
+
+let elem = document.getElementById('elem');
+
+document.addEventListener('mousemove', function(event) {
+	elem.innerHTML = event.pageX + ' : ' + event.pageY;
 });

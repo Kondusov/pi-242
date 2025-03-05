@@ -7,6 +7,7 @@ body{
 }
 .ava_block{
     text-align: center;
+    position: relative;
 }
 .left-sidebar{
     width: 20%;
@@ -104,3 +105,13 @@ body{
 .modalWindow {
     position: relative;
 }
+/* Глаза */
+#canvas {
+    width: 50%;
+    height: 25%;
+    position: absolute;
+    top: 26%;
+    left: 42%;
+
+}
+/* END Глаза */
