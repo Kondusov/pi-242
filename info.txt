@@ -1,0 +1,1 @@
+file:///C:/xampp/htdocs/PI-242/vcard/contact.html?name=Djon&message=Hello%0D%0A

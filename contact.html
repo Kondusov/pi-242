@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru" id="html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт веб разработкика, страница связи, контакты</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="left-sidebar">
+        <div class="ava_block">
+            <img src="img/ava.jfif" alt="">
+            <p>Иван Иванов</p>
+        </div>
+        <ul>
+            <a href="index.html"><li>Главная</li></a>
+            <a href=""><li>ЭЛЕМЕНТ 2</li></a>
+            <a href=""><li>ЭлеМеНт3</li></a>
+            <a href=""><li>Элемент списка</li></a>
+            <a href="contact.html"><li>Контакты</li></a>
+        </ul>
+    </div>
+    <div class="info-block">
+        <div>
+            <p></p>
+            <form action="script/send.php" method="post">
+                <label>
+                    Введите имя
+                    <input name="name" type="text" placeholder="Ваше имя">
+                </label><br><br>
+                <input name="email" type="email">
+
+                <textarea name="message"  rows="5" cols="33"  placeholder="Что будем искать?" required></textarea><br>
+                <input name="file" type="file">
+                <!-- <input type="submit" value="Отправить форму"> -->
+                <br><br><br><button type="submit">И так можно отправить</button>
+            </form>
+        </div>
+        <div></div>
+        <div></div>
+    </div>
+    <!-- modalWindow -->
+    <div class="modalBackground">
+        <div class="modalActive">
+            <div class="modalClose">
+                <img src="img/pl.png" />
+            </div>
+            <div class="modalWindow">
+                <p>Есть супер предложение!!!</p>
+            </div>
+        </div>
+    </div>
+    <!-- modalWindow END
+    <script src="js/main.js"></script> -->
+</body>
+</html>
