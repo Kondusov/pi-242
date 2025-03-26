@@ -114,4 +114,12 @@ body{
     left: 42%;
 
 }
+.login_link{
+    float: right;
+}
 /* END Глаза */
+footer{
+    background-color: #fff;
+    padding: 15px;
+    text-align: center;
+}
