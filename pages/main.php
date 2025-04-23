@@ -20,14 +20,18 @@
                 $sql = "SELECT * FROM tovar";
                 $result = $pdo->query($sql);
                 //$result = $result->fetch();
+                $colors = ['table-secondary', 'table-primary', 'table-success', 'table-danger', 'table-warning', 'table-info'];
+                $colorIndex = 0;
                 foreach($result as $row){
-                    $id = $row["id"];
-                    $category = $row["category"];
-                    $type = $row["type"];
-                    $size = $row["size"];
-                    $qual = $row["qual"];
+                  $id = $row["id"];
+                  $category = $row["category"];
+                  $type = $row["type"];
+                  $size = $row["size"];
+                  $qual = $row["qual"];
+                  $colorClass = $colors[$colorIndex % count($colors)];
+                  $colorIndex++;
                     // отрисовка ячеек в таблице
-                    echo('<tr class="table-secondary">');
+                    echo('<tr class='.$colorClass.'>');
                     echo('<th scope="row">'.$id.'</th>');
                     echo('<td>'.$category.'</th>');
                     echo('<td>'.$type.'</th>');
@@ -40,6 +44,33 @@
     </tbody>
   </table>
 </div>
+<?php
+// Обработка сообщений
+if (isset($_GET['success'])) {
+    switch ($_GET['success']) {
+        case '1':
+            echo '<div class="alert alert-success">Количество товара успешно обновлено!</div>';
+            break;
+        case 'product_added':
+            echo '<div class="alert alert-success">Товар успешно добавлен!</div>';
+            break;
+    }
+}
+
+if (isset($_GET['error'])) {
+    switch ($_GET['error']) {
+        case 'update_failed':
+            echo '<div class="alert alert-danger">Не удалось обновить количество товара</div>';
+            break;
+        case 'product_exists':
+            echo '<div class="alert alert-danger">Товар с такими параметрами уже существует!</div>';
+            break;
+        case 'db_error':
+            echo '<div class="alert alert-danger">Ошибка базы данных</div>';
+            break;
+    }
+}
+?>
 <div class="add_tovar_form">
     <br>
 <form action="add_tovar.php" method="POST">
